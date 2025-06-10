@@ -1,0 +1,204 @@
+/* public/css/style.css */
+
+/* --- 1. Global Styles & Variables --- */
+:root {
+    --primary-dark: #1A202C; /* สีพื้นหลังเข้ม (เกือบดำ) */
+    --primary-gold: #C0A062; /* สีทองหรูหรา */
+    --primary-gold-hover: #D4B68A; /* สีทองตอน hover */
+    --text-dark: #2D3748;      /* สีตัวหนังสือหลัก */
+    --text-light: #F7FAFC;     /* สีตัวหนังสือบนพื้นเข้ม */
+    --background-light: #FDFDFD; /* สีพื้นหลังเว็บ */
+    --border-color: #E2E8F0;    /* สีเส้นขอบ */
+    --shadow-color: rgba(0, 0, 0, 0.05);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    line-height: 1.7;
+    background-color: var(--background-light);
+    color: var(--text-dark);
+}
+
+.container {
+    padding: 20px;
+    max-width: 1100px;
+    margin: 40px auto;
+}
+
+/* --- 2. Typography --- */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    margin-top: 0;
+}
+
+a {
+    color: var(--primary-gold);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--primary-gold-hover);
+}
+
+/* --- 3. Layout & Structure --- */
+.site-header {
+    background-color: var(--primary-dark);
+    color: var(--text-light);
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.site-footer {
+    text-align: center;
+    padding: 30px;
+    margin-top: 40px;
+    background-color: var(--primary-dark);
+    color: var(--text-light);
+}
+
+/* --- 4. Navigation Bar --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.nav-brand a {
+    color: white;
+    font-size: 1.5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu li a {
+    color: #E2E8F0; /* สีเทาอ่อน */
+    padding: 20px 15px;
+    display: block;
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-menu li a:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: white;
+}
+
+.lang-switcher a {
+    color: #A0AEC0; /* สีเทา */
+    font-weight: bold;
+    padding: 5px;
+}
+
+.lang-switcher a.active {
+    color: var(--primary-gold);
+    border-bottom: 2px solid var(--primary-gold);
+}
+
+/* --- 5. Forms, Buttons & Cards --- */
+.form-card, .card {
+    background-color: #FFFFFF;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 30px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+input[type="datetime-local"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: 'Lato', sans-serif;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary-gold);
+    box-shadow: 0 0 0 3px rgba(192, 160, 98, 0.2);
+}
+
+button, .button-primary {
+    display: inline-block;
+    background-color: var(--primary-gold);
+    color: var(--primary-dark);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover, .button-primary:hover {
+    background-color: var(--primary-gold-hover);
+    transform: translateY(-2px);
+    color: var(--primary-dark);
+}
+
+/* --- 6. Tables --- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    border-radius: 8px;
+    overflow: hidden; /* ทำให้ border-radius มีผลกับ table */
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+th {
+    background-color: #F7FAFC;
+    font-family: 'Montserrat', sans-serif;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr:hover {
+    background-color: #EDF2F7;
+}
